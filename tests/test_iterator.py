@@ -3,4 +3,4 @@ import csscolors
 
 def test_iterator():
     for name, code in csscolors.iterator():
-        pass
+        assert code.startswith("#")
