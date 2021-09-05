@@ -13,7 +13,7 @@ setuptools.setup(
     description="CSS Colors in hex color codes.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/jakkes/csscolors",
+    url="https://github.com/jakkes/py-csscolors",
     packages=setuptools.find_packages(),
     classifiers=(
         "Programming Language :: Python :: 3",
