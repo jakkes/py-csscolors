@@ -6,47 +6,158 @@
 from typing import Iterator as _Iterator, Tuple as _Tuple
 
 
-__all__ = []
+__all__ = [
+    "ALICE_BLUE",
+    "ANTIQUEWHITE",
+    "AQUA",
+    "AQUAMARINE",
+    "AZURE",
+    "BEIGE",
+    "BISQUE",
+    "BLACK",
+    "BLANCHED_ALMOND",
+    "BLUE",
+    "BLUE_VIOLET",
+    "BROWN",
+    "BURLYWOOD",
+    "CADET_BLUE",
+    "CHARTREUSE",
+    "CHOCOLATE",
+    "CORAL",
+    "CORNFLOWER_BLUE",
+    "CORNSILK",
+    "CRIMSON",
+    "CYAN",
+    "DARK_BLUE",
+    "DARK_CYAN",
+    "DARK_GOLDEN_ROD",
+    "DARK_GRAY",
+    "DARK_GREY",
+    "DARK_GREEN",
+    "DARK_KHAKI",
+    "DARK_MAGENTA",
+    "DARK_OLIVE_GREEN",
+    "DARK_ORANGE",
+    "DARK_ORCHID",
+    "DARK_RED",
+    "DARK_SALMON",
+    "DARK_SEA_GREEN",
+    "DARK_SLATE_BLUE",
+    "DARK_SLATE_GRAY",
+    "DARK_SLATE_GREY",
+    "DARK_TURQUOISE",
+    "DARK_VIOLET",
+    "DEEP_PINK",
+    "DEEP_SKY_BLUE",
+    "DIM_GRAY",
+    "DIM_GREY",
+    "DODGER_BLUE",
+    "FIRE_BRICK",
+    "FLORALWHITE",
+    "FOREST_GREEN",
+    "FUCHSIA",
+    "GAINSBORO",
+    "GHOSTWHITE",
+    "GOLD",
+    "GOLDEN_ROD",
+    "GRAY",
+    "GREY",
+    "GREEN",
+    "GREEN_YELLOW",
+    "HONEY_DEW",
+    "HOT_PINK",
+    "INDIAN_RED",
+    "INDIGO",
+    "IVORY",
+    "KHAKI",
+    "LAVENDER",
+    "LAVENDER_BLUSH",
+    "LAWN_GREEN",
+    "LEMON_CHIFFON",
+    "LIGHT_BLUE",
+    "LIGHT_CORAL",
+    "LIGHT_CYAN",
+    "LIGHT_GOLDEN_ROD_YELLOW",
+    "LIGHT_GRAY",
+    "LIGHT_GREY",
+    "LIGHT_GREEN",
+    "LIGHT_PINK",
+    "LIGHT_SALMON",
+    "LIGHT_SEA_GREEN",
+    "LIGHT_SKY_BLUE",
+    "LIGHT_SLATE_GRAY",
+    "LIGHT_SLATE_GREY",
+    "LIGHT_STEEL_BLUE",
+    "LIGHT_YELLOW",
+    "LIME",
+    "LIME_GREEN",
+    "LINEN",
+    "MAGENTA",
+    "MAROON",
+    "MEDIUM_AQUA_MARINE",
+    "MEDIUM_BLUE",
+    "MEDIUM_ORCHID",
+    "MEDIUM_PURPLE",
+    "MEDIUM_SEA_GREEN",
+    "MEDIUM_SLATE_BLUE",
+    "MEDIUM_SPRING_GREEN",
+    "MEDIUM_TURQUOISE",
+    "MEDIUM_VIOLET_RED",
+    "MIDNIGHT_BLUE",
+    "MINT_CREAM",
+    "MISTY_ROSE",
+    "MOCCASIN",
+    "NAVAJOWHITE",
+    "NAVY",
+    "OLD_LACE",
+    "OLIVE",
+    "OLIVE_DRAB",
+    "ORANGE",
+    "ORANGE_RED",
+    "ORCHID",
+    "PALE_GOLDEN_ROD",
+    "PALE_GREEN",
+    "PALE_TURQUOISE",
+    "PALE_VIOLET_RED",
+    "PAPAYAWHIP",
+    "PEACH_PUFF",
+    "PERU",
+    "PINK",
+    "PLUM",
+    "POWDER_BLUE",
+    "PURPLE",
+    "REBECCA_PURPLE",
+    "RED",
+    "ROSY_BROWN",
+    "ROYAL_BLUE",
+    "SADDLE_BROWN",
+    "SALMON",
+    "SANDY_BROWN",
+    "SEA_GREEN",
+    "SEA_SHELL",
+    "SIENNA",
+    "SILVER",
+    "SKY_BLUE",
+    "SLATE_BLUE",
+    "SLATE_GRAY",
+    "SLATE_GREY",
+    "SNOW",
+    "SPRING_GREEN",
+    "STEEL_BLUE",
+    "TAN",
+    "TEAL",
+    "THISTLE",
+    "TOMATO",
+    "TURQUOISE",
+    "VIOLET",
+    "WHEAT",
+    "WHITE",
+    "WHITE_SMOKE",
+    "YELLOW",
+    "YELLOW_GREEN",
+    "iterator"
+]
 __version__ = "<%<%VERSION%>%>"
-
-
-def _fix_pdoc():
-    import os
-    import queue
-    from types import ModuleType
-    root = os.path.dirname(__file__)
-    modules = queue.Queue()
-    for module in __all__:
-        modules.put_nowait((module, ))
-
-    while not modules.empty():
-        module_name = modules.get_nowait()
-        module = eval(".".join(module_name))
-        if not isinstance(module, ModuleType):
-            continue
-        if "__pdoc__" not in dir(module):
-            module.__pdoc__ = {}
-        if "__all__" not in dir(module):
-            module.__all__ = []
-
-        for obj in module.__all__:
-            obj = eval(".".join(module_name) + f".{obj}")
-            if not isinstance(obj, ModuleType):
-                obj.__module__ = "csscolors." + ".".join(module_name)
-
-        for submodule in os.listdir(os.path.join(root, *module_name)):
-            submodule_path = os.path.join(root, *module_name, submodule)
-            if submodule.startswith("_"):
-                continue
-            if os.path.isdir(submodule_path) and "__init__.py" in os.listdir(submodule_path):
-                module.__pdoc__[submodule] = submodule in module.__all__
-                if submodule in module.__all__:
-                    modules.put_nowait(module_name + (submodule, ))
-            elif submodule.endswith(".py"):
-                submodule = submodule[:-3]
-                module.__pdoc__[submodule] = submodule in module.__all__
-
-_fix_pdoc()
 
 
 ALICE_BLUE = "#f0f8ff"
@@ -208,3 +319,46 @@ def iterator() -> _Iterator[_Tuple[str, str]]:
     for key, value in globals().items():
         if not key.startswith("_") and key[0].isupper():
             yield key, value
+
+
+def _fix_pdoc():
+    import os
+    import queue
+    from types import ModuleType
+
+    root = os.path.dirname(__file__)
+    modules = queue.Queue()
+    for module in __all__:
+        modules.put_nowait((module,))
+
+    while not modules.empty():
+        module_name = modules.get_nowait()
+        module = eval(".".join(module_name))
+        if not isinstance(module, ModuleType):
+            continue
+        if "__pdoc__" not in dir(module):
+            module.__pdoc__ = {}
+        if "__all__" not in dir(module):
+            module.__all__ = []
+
+        for obj in module.__all__:
+            obj = eval(".".join(module_name) + f".{obj}")
+            if not isinstance(obj, ModuleType):
+                obj.__module__ = "csscolors." + ".".join(module_name)
+
+        for submodule in os.listdir(os.path.join(root, *module_name)):
+            submodule_path = os.path.join(root, *module_name, submodule)
+            if submodule.startswith("_"):
+                continue
+            if os.path.isdir(submodule_path) and "__init__.py" in os.listdir(
+                submodule_path
+            ):
+                module.__pdoc__[submodule] = submodule in module.__all__
+                if submodule in module.__all__:
+                    modules.put_nowait(module_name + (submodule,))
+            elif submodule.endswith(".py"):
+                submodule = submodule[:-3]
+                module.__pdoc__[submodule] = submodule in module.__all__
+
+
+_fix_pdoc()
