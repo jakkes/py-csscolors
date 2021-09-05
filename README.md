@@ -1,4 +1,5 @@
-# csscolors
+# CSS Colors
+[![Build Status](http://drone.jakke.se/api/badges/jakkes/py-csscolors/status.svg)](http://drone.jakke.se/jakkes/py-csscolors)
 Simply all css colors easily accessible in hex color code.
 
 ```python
