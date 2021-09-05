@@ -27,3 +27,9 @@ BLUE #0000ff
 ...
 ...
 ```
+
+## Install
+Install through `pip`:
+```bash
+pip install csscolors
+```
