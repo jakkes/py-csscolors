@@ -6,8 +6,7 @@
 <meta name="generator" content="pdoc 0.10.0" />
 <title>csscolors API documentation</title>
 <meta name="description" content="CSS Colors
-[![Build Status](http://drone.jakke.se/api/badges/jakkes/py-csscolors/status.svg)](http://drone.jakke.se/jakkes/py-csscolors)
-Simply all …" />
+[![Build Status](http://drone.jakke.se/api/badges/jakkes/py-csscolors/status.svg)](http://drone.jakke.se/jakkes/py-csscolors) …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -25,8 +24,8 @@ Simply all …" />
 </header>
 <section id="section-intro">
 <h1 id="css-colors">CSS Colors</h1>
-<p><a href="http://drone.jakke.se/jakkes/py-csscolors"><img alt="Build Status" src="http://drone.jakke.se/api/badges/jakkes/py-csscolors/status.svg"></a>
-Simply all css colors easily accessible in hex color code.</p>
+<p><a href="http://drone.jakke.se/jakkes/py-csscolors"><img alt="Build Status" src="http://drone.jakke.se/api/badges/jakkes/py-csscolors/status.svg"></a></p>
+<p>Simply all css colors easily accessible in hex color code.</p>
 <pre><code class="language-python">&gt;&gt;&gt; import csscolors
 &gt;&gt;&gt; csscolors.RED
 '#ff0000'
@@ -49,6 +48,12 @@ BLUE #0000ff
 ...
 ...
 </code></pre>
+<h2 id="install">Install</h2>
+<p>Install through <code>pip</code>:</p>
+<pre><code class="language-bash">pip install csscolors
+</code></pre>
+<h2 id="documentation">Documentation</h2>
+<p><a href="https://jakkes.github.io/py-csscolors/csscolors/">https://jakkes.github.io/py-csscolors/csscolors/</a></p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -61,47 +66,158 @@ BLUE #0000ff
 from typing import Iterator as _Iterator, Tuple as _Tuple
 
 
-__all__ = []
+__all__ = [
+    &#34;ALICE_BLUE&#34;,
+    &#34;ANTIQUEWHITE&#34;,
+    &#34;AQUA&#34;,
+    &#34;AQUAMARINE&#34;,
+    &#34;AZURE&#34;,
+    &#34;BEIGE&#34;,
+    &#34;BISQUE&#34;,
+    &#34;BLACK&#34;,
+    &#34;BLANCHED_ALMOND&#34;,
+    &#34;BLUE&#34;,
+    &#34;BLUE_VIOLET&#34;,
+    &#34;BROWN&#34;,
+    &#34;BURLYWOOD&#34;,
+    &#34;CADET_BLUE&#34;,
+    &#34;CHARTREUSE&#34;,
+    &#34;CHOCOLATE&#34;,
+    &#34;CORAL&#34;,
+    &#34;CORNFLOWER_BLUE&#34;,
+    &#34;CORNSILK&#34;,
+    &#34;CRIMSON&#34;,
+    &#34;CYAN&#34;,
+    &#34;DARK_BLUE&#34;,
+    &#34;DARK_CYAN&#34;,
+    &#34;DARK_GOLDEN_ROD&#34;,
+    &#34;DARK_GRAY&#34;,
+    &#34;DARK_GREY&#34;,
+    &#34;DARK_GREEN&#34;,
+    &#34;DARK_KHAKI&#34;,
+    &#34;DARK_MAGENTA&#34;,
+    &#34;DARK_OLIVE_GREEN&#34;,
+    &#34;DARK_ORANGE&#34;,
+    &#34;DARK_ORCHID&#34;,
+    &#34;DARK_RED&#34;,
+    &#34;DARK_SALMON&#34;,
+    &#34;DARK_SEA_GREEN&#34;,
+    &#34;DARK_SLATE_BLUE&#34;,
+    &#34;DARK_SLATE_GRAY&#34;,
+    &#34;DARK_SLATE_GREY&#34;,
+    &#34;DARK_TURQUOISE&#34;,
+    &#34;DARK_VIOLET&#34;,
+    &#34;DEEP_PINK&#34;,
+    &#34;DEEP_SKY_BLUE&#34;,
+    &#34;DIM_GRAY&#34;,
+    &#34;DIM_GREY&#34;,
+    &#34;DODGER_BLUE&#34;,
+    &#34;FIRE_BRICK&#34;,
+    &#34;FLORALWHITE&#34;,
+    &#34;FOREST_GREEN&#34;,
+    &#34;FUCHSIA&#34;,
+    &#34;GAINSBORO&#34;,
+    &#34;GHOSTWHITE&#34;,
+    &#34;GOLD&#34;,
+    &#34;GOLDEN_ROD&#34;,
+    &#34;GRAY&#34;,
+    &#34;GREY&#34;,
+    &#34;GREEN&#34;,
+    &#34;GREEN_YELLOW&#34;,
+    &#34;HONEY_DEW&#34;,
+    &#34;HOT_PINK&#34;,
+    &#34;INDIAN_RED&#34;,
+    &#34;INDIGO&#34;,
+    &#34;IVORY&#34;,
+    &#34;KHAKI&#34;,
+    &#34;LAVENDER&#34;,
+    &#34;LAVENDER_BLUSH&#34;,
+    &#34;LAWN_GREEN&#34;,
+    &#34;LEMON_CHIFFON&#34;,
+    &#34;LIGHT_BLUE&#34;,
+    &#34;LIGHT_CORAL&#34;,
+    &#34;LIGHT_CYAN&#34;,
+    &#34;LIGHT_GOLDEN_ROD_YELLOW&#34;,
+    &#34;LIGHT_GRAY&#34;,
+    &#34;LIGHT_GREY&#34;,
+    &#34;LIGHT_GREEN&#34;,
+    &#34;LIGHT_PINK&#34;,
+    &#34;LIGHT_SALMON&#34;,
+    &#34;LIGHT_SEA_GREEN&#34;,
+    &#34;LIGHT_SKY_BLUE&#34;,
+    &#34;LIGHT_SLATE_GRAY&#34;,
+    &#34;LIGHT_SLATE_GREY&#34;,
+    &#34;LIGHT_STEEL_BLUE&#34;,
+    &#34;LIGHT_YELLOW&#34;,
+    &#34;LIME&#34;,
+    &#34;LIME_GREEN&#34;,
+    &#34;LINEN&#34;,
+    &#34;MAGENTA&#34;,
+    &#34;MAROON&#34;,
+    &#34;MEDIUM_AQUA_MARINE&#34;,
+    &#34;MEDIUM_BLUE&#34;,
+    &#34;MEDIUM_ORCHID&#34;,
+    &#34;MEDIUM_PURPLE&#34;,
+    &#34;MEDIUM_SEA_GREEN&#34;,
+    &#34;MEDIUM_SLATE_BLUE&#34;,
+    &#34;MEDIUM_SPRING_GREEN&#34;,
+    &#34;MEDIUM_TURQUOISE&#34;,
+    &#34;MEDIUM_VIOLET_RED&#34;,
+    &#34;MIDNIGHT_BLUE&#34;,
+    &#34;MINT_CREAM&#34;,
+    &#34;MISTY_ROSE&#34;,
+    &#34;MOCCASIN&#34;,
+    &#34;NAVAJOWHITE&#34;,
+    &#34;NAVY&#34;,
+    &#34;OLD_LACE&#34;,
+    &#34;OLIVE&#34;,
+    &#34;OLIVE_DRAB&#34;,
+    &#34;ORANGE&#34;,
+    &#34;ORANGE_RED&#34;,
+    &#34;ORCHID&#34;,
+    &#34;PALE_GOLDEN_ROD&#34;,
+    &#34;PALE_GREEN&#34;,
+    &#34;PALE_TURQUOISE&#34;,
+    &#34;PALE_VIOLET_RED&#34;,
+    &#34;PAPAYAWHIP&#34;,
+    &#34;PEACH_PUFF&#34;,
+    &#34;PERU&#34;,
+    &#34;PINK&#34;,
+    &#34;PLUM&#34;,
+    &#34;POWDER_BLUE&#34;,
+    &#34;PURPLE&#34;,
+    &#34;REBECCA_PURPLE&#34;,
+    &#34;RED&#34;,
+    &#34;ROSY_BROWN&#34;,
+    &#34;ROYAL_BLUE&#34;,
+    &#34;SADDLE_BROWN&#34;,
+    &#34;SALMON&#34;,
+    &#34;SANDY_BROWN&#34;,
+    &#34;SEA_GREEN&#34;,
+    &#34;SEA_SHELL&#34;,
+    &#34;SIENNA&#34;,
+    &#34;SILVER&#34;,
+    &#34;SKY_BLUE&#34;,
+    &#34;SLATE_BLUE&#34;,
+    &#34;SLATE_GRAY&#34;,
+    &#34;SLATE_GREY&#34;,
+    &#34;SNOW&#34;,
+    &#34;SPRING_GREEN&#34;,
+    &#34;STEEL_BLUE&#34;,
+    &#34;TAN&#34;,
+    &#34;TEAL&#34;,
+    &#34;THISTLE&#34;,
+    &#34;TOMATO&#34;,
+    &#34;TURQUOISE&#34;,
+    &#34;VIOLET&#34;,
+    &#34;WHEAT&#34;,
+    &#34;WHITE&#34;,
+    &#34;WHITE_SMOKE&#34;,
+    &#34;YELLOW&#34;,
+    &#34;YELLOW_GREEN&#34;,
+    &#34;iterator&#34;
+]
 __version__ = &#34;&lt;%&lt;%VERSION%&gt;%&gt;&#34;
-
-
-def _fix_pdoc():
-    import os
-    import queue
-    from types import ModuleType
-    root = os.path.dirname(__file__)
-    modules = queue.Queue()
-    for module in __all__:
-        modules.put_nowait((module, ))
-
-    while not modules.empty():
-        module_name = modules.get_nowait()
-        module = eval(&#34;.&#34;.join(module_name))
-        if not isinstance(module, ModuleType):
-            continue
-        if &#34;__pdoc__&#34; not in dir(module):
-            module.__pdoc__ = {}
-        if &#34;__all__&#34; not in dir(module):
-            module.__all__ = []
-
-        for obj in module.__all__:
-            obj = eval(&#34;.&#34;.join(module_name) + f&#34;.{obj}&#34;)
-            if not isinstance(obj, ModuleType):
-                obj.__module__ = &#34;csscolors.&#34; + &#34;.&#34;.join(module_name)
-
-        for submodule in os.listdir(os.path.join(root, *module_name)):
-            submodule_path = os.path.join(root, *module_name, submodule)
-            if submodule.startswith(&#34;_&#34;):
-                continue
-            if os.path.isdir(submodule_path) and &#34;__init__.py&#34; in os.listdir(submodule_path):
-                module.__pdoc__[submodule] = submodule in module.__all__
-                if submodule in module.__all__:
-                    modules.put_nowait(module_name + (submodule, ))
-            elif submodule.endswith(&#34;.py&#34;):
-                submodule = submodule[:-3]
-                module.__pdoc__[submodule] = submodule in module.__all__
-
-_fix_pdoc()
 
 
 ALICE_BLUE = &#34;#f0f8ff&#34;
@@ -262,7 +378,50 @@ def iterator() -&gt; _Iterator[_Tuple[str, str]]:
     &#34;&#34;&#34;
     for key, value in globals().items():
         if not key.startswith(&#34;_&#34;) and key[0].isupper():
-            yield key, value</code></pre>
+            yield key, value
+
+
+def _fix_pdoc():
+    import os
+    import queue
+    from types import ModuleType
+
+    root = os.path.dirname(__file__)
+    modules = queue.Queue()
+    for module in __all__:
+        modules.put_nowait((module,))
+
+    while not modules.empty():
+        module_name = modules.get_nowait()
+        module = eval(&#34;.&#34;.join(module_name))
+        if not isinstance(module, ModuleType):
+            continue
+        if &#34;__pdoc__&#34; not in dir(module):
+            module.__pdoc__ = {}
+        if &#34;__all__&#34; not in dir(module):
+            module.__all__ = []
+
+        for obj in module.__all__:
+            obj = eval(&#34;.&#34;.join(module_name) + f&#34;.{obj}&#34;)
+            if not isinstance(obj, ModuleType):
+                obj.__module__ = &#34;csscolors.&#34; + &#34;.&#34;.join(module_name)
+
+        for submodule in os.listdir(os.path.join(root, *module_name)):
+            submodule_path = os.path.join(root, *module_name, submodule)
+            if submodule.startswith(&#34;_&#34;):
+                continue
+            if os.path.isdir(submodule_path) and &#34;__init__.py&#34; in os.listdir(
+                submodule_path
+            ):
+                module.__pdoc__[submodule] = submodule in module.__all__
+                if submodule in module.__all__:
+                    modules.put_nowait(module_name + (submodule,))
+            elif submodule.endswith(&#34;.py&#34;):
+                submodule = submodule[:-3]
+                module.__pdoc__[submodule] = submodule in module.__all__
+
+
+_fix_pdoc()</code></pre>
 </details>
 </section>
 <section>
@@ -270,6 +429,34 @@ def iterator() -&gt; _Iterator[_Tuple[str, str]]:
 <section>
 </section>
 <section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="csscolors.iterator"><code class="name flex">
+<span>def <span class="ident">iterator</span></span>(<span>) ‑> Iterator[Tuple[str, str]]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Iterates through the available colors.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Iterator[Tuple[str, str]]</code></dt>
+<dd>Yields pairs of color name and color hex code.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def iterator() -&gt; _Iterator[_Tuple[str, str]]:
+    &#34;&#34;&#34;Iterates through the available colors.
+
+    Returns:
+        Iterator[Tuple[str, str]]: Yields pairs of color name and color hex code.
+    &#34;&#34;&#34;
+    for key, value in globals().items():
+        if not key.startswith(&#34;_&#34;) and key[0].isupper():
+            yield key, value</code></pre>
+</details>
+</dd>
+</dl>
 </section>
 <section>
 </section>
@@ -278,10 +465,19 @@ def iterator() -&gt; _Iterator[_Tuple[str, str]]:
 <h1>Index</h1>
 <div class="toc">
 <ul>
-<li><a href="#css-colors">CSS Colors</a></li>
+<li><a href="#css-colors">CSS Colors</a><ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#documentation">Documentation</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="csscolors.iterator" href="#csscolors.iterator">iterator</a></code></li>
+</ul>
+</li>
 </ul>
 </nav>
 </main>
